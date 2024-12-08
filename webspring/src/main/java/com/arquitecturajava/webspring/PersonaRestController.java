@@ -24,6 +24,6 @@ public class PersonaRestController {
 	
 	@GetMapping
 	public List<PersonaDto> buscarTodos(){
-		return servicio.buscarTodos().stream().map((p)->new PersonaDto(p.getNombre())).toList();
+		return servicio.buscarTodos().stream().map((p)->new PersonaDto(p.getNombre().toUpperCase())).toList();
 	}
 }
